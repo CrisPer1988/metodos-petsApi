@@ -3,6 +3,7 @@ import './App.css'
 import User from './components/User'
 import Pet from './components/Pet'
 import ClinicHistory from './components/ClinicHistory'
+import Appointment from './components/Appointment'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
      <User />
      <Pet />
      <ClinicHistory />
+     <Appointment />
      </div>
     </>
   )

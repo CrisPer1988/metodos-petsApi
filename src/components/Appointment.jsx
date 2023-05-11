@@ -1,11 +1,11 @@
 import React from 'react'
 import Table from "react-bootstrap/Table";
 
-const ClinicHistory = () => {
+const Appointment = () => {
   return (
     <>
       <div className="content__endpoint">
-        <h3>/api/v1/clinic-history</h3>
+        <h3>/api/v1/appointment</h3>
       </div>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -20,7 +20,7 @@ const ClinicHistory = () => {
             <td className="table">POST</td>
             <td className="table">/:id</td>
             <td className="table">
-            Crear una nueva historia clinica, siendo :id el id de la mascota (enviar description, date y vet_id 
+            Crear una nueva cita, siendo :id el id de la mascota (enviar date y reason 
 en req.body)
             </td>
           </tr>
@@ -28,27 +28,47 @@ en req.body)
             <td className="table">GET</td>
             <td className="table">/</td>
             <td className="table">
-              Buscar toda la historia clinica de la mascota
+              Buscar todas las citas de la mascota
             </td>
           </tr>
-          
+
+          <tr>
+            <td className="table">GET</td>
+            <td className="table">/:id</td>
+            <td className="table">
+              Buscar una cita por id
+            </td>
+          </tr>
+
+          <tr>
+            <td className="table">PATCH</td>
+            <td className="table">/:id</td>
+            <td className="table">
+              Actualizar cita, siendo /:id el id de la cita  (solo date)
+            </td>
+          </tr>
+
+          <tr>
+            <td className="table">DELETE</td>
+            <td className="table">/:id</td>
+            <td className="table">
+              Actualizar estado de la cita (status: false)
+            </td>
+          </tr>
         </tbody>
       </Table>
       <ul>
       <li>
-          Solo el usuario con role "vet" podra tener acceso a esta seccion.
+          Solo el usuario con role "vet" podra crear citas.
         </li>
         <li>
         Todas las rutas deben estar protegidas por un método de autentificación.
         </li>
-        <li> El endpoint para crear historia clinica, debe estar protegido con express-validator.</li>
         <li>
           El motodo GET, debe incluir la siguiente información:
           <ol>
             <li>Informacion de la mascota</li>
             <li>Informacion de los veterinarios</li>
-            <li>Informacion de los tratamientos</li>
-            <li>Informacion de los examanes</li>
           </ol>
         </li>
       </ul>
@@ -56,4 +76,4 @@ en req.body)
   )
 }
 
-export default ClinicHistory
+export default Appointment

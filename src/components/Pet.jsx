@@ -56,7 +56,7 @@ const Pet = () => {
           Se debe usar express-validator para el endpoint de crear mascotas.
         </li>
         <li>
-          El motodo GET (/me), debe incluir la siguiente información:
+          El motodo GET (/pets/:id), debe incluir la siguiente información:
           <ol>
             <li>Las citas programadas</li>
             <li>La historia clinica de la mascota</li>
