@@ -51,7 +51,7 @@ const User = () => {
           <tr>
             <td className="table">GET</td>
             <td className="table">/pets</td>
-            <td className="table">Obtener todas las mascotas del usuario</td>
+            <td className="table">Obtener todas las mascotas</td>
           </tr>
 
           <tr>
@@ -81,8 +81,14 @@ const User = () => {
           Los métodos PATCH y DELETE deben estar protegidos para que únicamente
           el dueño de la cuenta a modificar pueda realizar dichas acciones.
         </li>
+        <li>Los metodos GET, deben ser solo habilitados para usuarios con role "vet"</li>
+        <li>Para el endopoint /pets, se debe incluir la siguiente Informacion
+            <ol>
+                <li>Informacion del usuario</li>
+            </ol>
+        </li>
         <li>
-          Para los endpoints /pets, se debe incluir la siguiente información:
+          Para el endpoint /pets/:id, se debe incluir la siguiente información:
           <ol>
             <li>Las citas programadas</li>
             <li>La historia clinica de la mascota</li>

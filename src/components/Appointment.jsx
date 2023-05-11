@@ -26,9 +26,9 @@ en req.body)
           </tr>
           <tr>
             <td className="table">GET</td>
-            <td className="table">/</td>
+            <td className="table">/me</td>
             <td className="table">
-              Buscar todas las citas de la mascota
+              Buscar todas las citas de la mascota del usuario en sesion
             </td>
           </tr>
 

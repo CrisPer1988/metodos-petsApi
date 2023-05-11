@@ -55,6 +55,7 @@ const Pet = () => {
         <li>
           Se debe usar express-validator para el endpoint de crear mascotas.
         </li>
+        <li>Para los metodos PATCH Y DELETE autorizar solo al dueño de la mascota a realizarlos</li>
         <li>
           El motodo GET (/pets/:id), debe incluir la siguiente información:
           <ol>
