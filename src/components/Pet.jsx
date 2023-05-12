@@ -25,13 +25,6 @@ const Pet = () => {
             </td>
           </tr>
           <tr>
-            <td className="table">GET</td>
-            <td className="table">/me</td>
-            <td className="table">
-              Buscar todas las mascotas del usuario
-            </td>
-          </tr>
-          <tr>
             <td className="table">PATCH</td>
             <td className="table">/:id</td>
             <td className="table">
@@ -56,13 +49,7 @@ const Pet = () => {
           Se debe usar express-validator para el endpoint de crear mascotas.
         </li>
         <li>Para los metodos PATCH Y DELETE autorizar solo al dueño de la mascota a realizarlos</li>
-        <li>
-          El motodo GET (/pets/:id), debe incluir la siguiente información:
-          <ol>
-            <li>Las citas programadas</li>
-            <li>La historia clinica de la mascota</li>
-          </ol>
-        </li>
+        
       </ul>
     </>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
 import Table from "react-bootstrap/Table";
 
-const Appointment = () => {
+const Exam = () => {
   return (
     <>
       <div className="content__endpoint">
-        <h3>/api/v1/appointment</h3>
+        <h3>/api/v1/exams</h3>
       </div>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -20,15 +20,14 @@ const Appointment = () => {
             <td className="table">POST</td>
             <td className="table">/:id</td>
             <td className="table">
-            Crear una nueva cita, siendo :id el id de la mascota (enviar date, reason y vet_id 
-en req.body)
+            Crear un nuevo examen, siendo /:id, el id de la historia clinica (enviar exam, description, date y result req.body)
             </td>
           </tr>
           <tr>
             <td className="table">GET</td>
-            <td className="table">/me</td>
+            <td className="table">/</td>
             <td className="table">
-              Buscar todas las citas de la mascota del usuario en sesion
+              Buscar todos los examenes de la mascota.
             </td>
           </tr>
 
@@ -36,7 +35,7 @@ en req.body)
             <td className="table">GET</td>
             <td className="table">/:id</td>
             <td className="table">
-              Buscar una cita por id
+              Buscar un examen dado un id
             </td>
           </tr>
 
@@ -44,7 +43,7 @@ en req.body)
             <td className="table">PATCH</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar cita, siendo /:id el id de la cita  (solo date)
+              Actualizar examen, siendo /:id el id del exmane (solo result)
             </td>
           </tr>
 
@@ -52,28 +51,24 @@ en req.body)
             <td className="table">DELETE</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar estado de la cita (status: false)
+              Actualizar estado del examen, siendo /:id el id del examen (status: cancelled)
             </td>
           </tr>
         </tbody>
       </Table>
       <ul>
+        <li>Todas las rutas deben estar protegidas</li>
         <li>
-        Todas las rutas deben estar protegidas por un método de autentificación.
+        Solo los veterinarion podran tener acceso a esta ruta.
         </li>
-        <li>Los metodos PATCH Y DELETE deben estar protegidos para que solo el dueño de las citas 
-          pueda actualizarlas o eliminarlas.
-        </li>
-        <li>
-          Los metododos GET, debe incluir la siguiente información:
-          <ol>
-            <li>Informacion de la mascota</li>
-            <li>Informacion de los veterinarios</li>
-          </ol>
-        </li>
+        <li>El endpoint GET/:id, debe incluir la siguiente informacion</li>
+        <ol>
+            <li>Informacion de las imagenes de los examenes</li>
+        </ol>
+        <li>Utilizar express-validator para el endpoint de crear examen </li>
       </ul>
     </>
   )
 }
 
-export default Appointment
+export default Exam

@@ -4,6 +4,9 @@ import User from './components/User'
 import Pet from './components/Pet'
 import ClinicHistory from './components/ClinicHistory'
 import Appointment from './components/Appointment'
+import Vet from './components/Vet'
+import Treatment from './components/Treatment'
+import Exam from './components/Exam'
 
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
      <Pet />
      <ClinicHistory />
      <Appointment />
+     <Vet />
+     <Treatment />
+     <Exam />
      </div>
     </>
   )

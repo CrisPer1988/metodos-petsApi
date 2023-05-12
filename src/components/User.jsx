@@ -22,7 +22,7 @@ const User = () => {
             <td className="table">/signup</td>
             <td className="table">
               Crear usuario (enviar name,surname, email, y password por
-              req.body) (opcional el role)
+              req.body)
             </td>
           </tr>
           <tr>
@@ -51,14 +51,14 @@ const User = () => {
           <tr>
             <td className="table">GET</td>
             <td className="table">/pets</td>
-            <td className="table">Obtener todas las mascotas</td>
+            <td className="table">Obtener todas las mascotas del usuario</td>
           </tr>
 
           <tr>
             <td className="table">GET</td>
             <td className="table">/pets/:id</td>
             <td className="table">
-              Obtener detalles de una sola mascota dado un ID{" "}
+              Obtener detalles de una sola mascota dado un ID
             </td>
           </tr>
         </tbody>
@@ -81,18 +81,11 @@ const User = () => {
           Los métodos PATCH y DELETE deben estar protegidos para que únicamente
           el dueño de la cuenta a modificar pueda realizar dichas acciones.
         </li>
-        <li>Los metodos GET, deben ser solo habilitados para usuarios con role "vet"</li>
-        <li>Para el endopoint /pets, se debe incluir la siguiente Informacion
+        <li>Para el endopoint /pets/:id, se debe incluir la siguiente Informacion
             <ol>
-                <li>Informacion del usuario</li>
+                <li>Informacion de las citas de la mascota</li>
+                <li>Informacion del veterinario</li>
             </ol>
-        </li>
-        <li>
-          Para el endpoint /pets/:id, se debe incluir la siguiente información:
-          <ol>
-            <li>Las citas programadas</li>
-            <li>La historia clinica de la mascota</li>
-          </ol>
         </li>
       </ul>
     </>

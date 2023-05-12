@@ -1,11 +1,11 @@
 import React from 'react'
 import Table from "react-bootstrap/Table";
 
-const Appointment = () => {
+const Vet = () => {
   return (
     <>
       <div className="content__endpoint">
-        <h3>/api/v1/appointment</h3>
+        <h3>/api/v1/vets</h3>
       </div>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -18,17 +18,23 @@ const Appointment = () => {
         <tbody>
           <tr>
             <td className="table">POST</td>
-            <td className="table">/:id</td>
+            <td className="table">/signup</td>
             <td className="table">
-            Crear una nueva cita, siendo :id el id de la mascota (enviar date, reason y vet_id 
-en req.body)
+            Crear un nuevo veterinario, (enviar name, speciality, email y password req.body)
+            </td>
+          </tr>
+          <tr>
+            <td className="table">POST</td>
+            <td className="table">/login</td>
+            <td className="table">
+            Logear veterinario, (enviar email y password req.body)
             </td>
           </tr>
           <tr>
             <td className="table">GET</td>
-            <td className="table">/me</td>
+            <td className="table">/</td>
             <td className="table">
-              Buscar todas las citas de la mascota del usuario en sesion
+              Buscar todos los veterinarios
             </td>
           </tr>
 
@@ -36,7 +42,7 @@ en req.body)
             <td className="table">GET</td>
             <td className="table">/:id</td>
             <td className="table">
-              Buscar una cita por id
+              Buscar un veterinario por id
             </td>
           </tr>
 
@@ -44,7 +50,7 @@ en req.body)
             <td className="table">PATCH</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar cita, siendo /:id el id de la cita  (solo date)
+              Actualizar veterinario, siendo /:id el id del veterinario (name, speciality, email)
             </td>
           </tr>
 
@@ -52,28 +58,23 @@ en req.body)
             <td className="table">DELETE</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar estado de la cita (status: false)
+              Actualizar estado del veterinario (status: false)
             </td>
           </tr>
         </tbody>
       </Table>
       <ul>
         <li>
-        Todas las rutas deben estar protegidas por un método de autentificación.
+        Todas las rutas, excepto las rutas para crear y logear, deben estar protegidas por un método de autentificación.
         </li>
-        <li>Los metodos PATCH Y DELETE deben estar protegidos para que solo el dueño de las citas 
-          pueda actualizarlas o eliminarlas.
+        <li>Utilizar express-validator para el endpoint de crear veterinario </li>
+        <li>Los metodos PATCH Y DELETE deben estar protegidos para que solo el dueño 
+          pueda actualizar o eliminar.
         </li>
-        <li>
-          Los metododos GET, debe incluir la siguiente información:
-          <ol>
-            <li>Informacion de la mascota</li>
-            <li>Informacion de los veterinarios</li>
-          </ol>
-        </li>
+        <li style={{color: "red"}}>***RECORDAR AGREGAR email Y password AL MODELO***</li>
       </ul>
     </>
   )
 }
 
-export default Appointment
+export default Vet

@@ -1,11 +1,11 @@
 import React from 'react'
 import Table from "react-bootstrap/Table";
 
-const Appointment = () => {
+const Treatment = () => {
   return (
     <>
       <div className="content__endpoint">
-        <h3>/api/v1/appointment</h3>
+        <h3>/api/v1/treatments</h3>
       </div>
       <Table striped bordered hover variant="dark">
         <thead>
@@ -20,15 +20,14 @@ const Appointment = () => {
             <td className="table">POST</td>
             <td className="table">/:id</td>
             <td className="table">
-            Crear una nueva cita, siendo :id el id de la mascota (enviar date, reason y vet_id 
-en req.body)
+            Crear un nuevo tratamiento, siendo /:id, el id de la historia clinica (enviar description, init_date y end_date req.body)
             </td>
           </tr>
           <tr>
             <td className="table">GET</td>
-            <td className="table">/me</td>
+            <td className="table">/</td>
             <td className="table">
-              Buscar todas las citas de la mascota del usuario en sesion
+              Buscar todos los tratamiento de la mascota.
             </td>
           </tr>
 
@@ -36,7 +35,7 @@ en req.body)
             <td className="table">GET</td>
             <td className="table">/:id</td>
             <td className="table">
-              Buscar una cita por id
+              Buscar un tratmiento por id
             </td>
           </tr>
 
@@ -44,7 +43,7 @@ en req.body)
             <td className="table">PATCH</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar cita, siendo /:id el id de la cita  (solo date)
+              Actualizar tratamiento, siendo /:id el id del tratamiento (description, init_date y end_date)
             </td>
           </tr>
 
@@ -52,28 +51,22 @@ en req.body)
             <td className="table">DELETE</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar estado de la cita (status: false)
+              Actualizar estado del tratamiento, siendo /:id el id del tratamiento (status: false)
             </td>
           </tr>
         </tbody>
       </Table>
       <ul>
+      <li>Todas las rutas deben estar protegidas</li>
+
         <li>
-        Todas las rutas deben estar protegidas por un método de autentificación.
+        Solo los veterinarion podran tener acceso a esta ruta.
         </li>
-        <li>Los metodos PATCH Y DELETE deben estar protegidos para que solo el dueño de las citas 
-          pueda actualizarlas o eliminarlas.
-        </li>
-        <li>
-          Los metododos GET, debe incluir la siguiente información:
-          <ol>
-            <li>Informacion de la mascota</li>
-            <li>Informacion de los veterinarios</li>
-          </ol>
-        </li>
+
+        <li>Utilizar express-validator para el endpoint de crear tratamiento </li>
       </ul>
     </>
   )
 }
 
-export default Appointment
+export default Treatment
