@@ -26,9 +26,9 @@ en req.body)
           </tr>
           <tr>
             <td className="table">GET</td>
-            <td className="table">/me</td>
+            <td className="table">/</td>
             <td className="table">
-              Buscar todas las citas de la mascota del usuario en sesion
+              Buscar todas las citas
             </td>
           </tr>
 
@@ -52,7 +52,7 @@ en req.body)
             <td className="table">DELETE</td>
             <td className="table">/:id</td>
             <td className="table">
-              Actualizar estado de la cita (status: false)
+              Actualizar estado de la cita (status: cancelled)
             </td>
           </tr>
         </tbody>
@@ -68,6 +68,7 @@ en req.body)
           Los metododos GET, debe incluir la siguiente información:
           <ol>
             <li>Informacion de la mascota</li>
+            <li>Informacion del usuario dueño de la mascota</li>
             <li>Informacion de los veterinarios</li>
           </ol>
         </li>
